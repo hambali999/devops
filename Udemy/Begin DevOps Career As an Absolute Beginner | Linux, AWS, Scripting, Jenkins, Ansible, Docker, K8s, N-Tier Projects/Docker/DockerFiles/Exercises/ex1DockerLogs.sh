@@ -6,6 +6,8 @@ docker run -P nginx # without running in detach mode, not running in the backgro
 
 docker logs <nameofimage> # to check the logs of that container image running.
 
+docker inspect # to inspect the container running
+
 docker run -d -P -e MYSQL_ROOT_PASSWORD=mypass mysql:5.7 
 
 

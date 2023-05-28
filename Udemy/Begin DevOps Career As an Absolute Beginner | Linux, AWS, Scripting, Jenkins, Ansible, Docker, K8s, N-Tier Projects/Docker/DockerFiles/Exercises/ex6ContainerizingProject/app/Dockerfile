@@ -1,6 +1,9 @@
 # base image, tomcat
 FROM tomcat:8-jre11
 
+LABEL "Project"="Vprofile"
+LABEL "Author"="NurHambali"
+
 # remove all local applications
 RUN rm -rf /usr/local/tomcat/webapps/*
 

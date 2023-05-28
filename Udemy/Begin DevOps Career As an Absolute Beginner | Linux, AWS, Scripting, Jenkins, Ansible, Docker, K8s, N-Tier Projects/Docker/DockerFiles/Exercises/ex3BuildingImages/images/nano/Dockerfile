@@ -16,7 +16,9 @@ WORKDIR /var/www/html
 
 VOLUME /var/log/apache2
 
-ADD nano.tar.gz /var/www/html
+ADD nano.tar.gz /var/www/html 
+
+# ADD command automatically extracts the contents of the tar file
 
 #COPY nano.tar.gz /var/www/html
 

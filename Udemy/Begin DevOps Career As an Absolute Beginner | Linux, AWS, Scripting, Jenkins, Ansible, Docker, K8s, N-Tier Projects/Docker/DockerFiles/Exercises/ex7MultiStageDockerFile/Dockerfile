@@ -1,12 +1,12 @@
 # Multistage Dockerfile
 
-# BUILD IMAGE
+# BUILD IMAGE, just a build image
 FROM openjdk:8 AS BUILD_IMAGE
 RUN apt update && apt install maven -y
 RUN git clone -b vp-docker https://github.com/imranvisualpath/vprofile-repo.git
 RUN cd vprofile-repo && mvn install
 
-# MAIN IMAGE
+# MAIN IMAGE, OUTPUT IMAGE
 FROM tomcat:8-jre11
 RUN rm -rf /usr/local/tomcat/webapps/*
 COPY --from=BUILD_IMAGE vprofile-repo/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
